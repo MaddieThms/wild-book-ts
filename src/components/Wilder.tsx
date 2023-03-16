@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ISkillProps, Skill } from "./Skill";
 import blank_profile from "./../assets/blank_profile.png";
 import style from "./wilder.module.css";
+import { WildersContext } from "../contexts/WildersContext";
 
 export interface IWilderProps {
   id: number;
@@ -11,20 +12,11 @@ export interface IWilderProps {
   skills: ISkillProps[];
   wilder: any;
   setWilders: any;
-  wilders: any;
-  getWilders: any;
 }
 
-const Wilder = ({
-  id,
-  name,
-  skills,
-  wilder,
-  setWilders,
-  wilders,
-  getWilders,
-}: IWilderProps) => {
+const Wilder = ({ id, name, skills, wilder, setWilders }: IWilderProps) => {
   const [skillsList, setSkillsList] = useState([]);
+  const { wilders, getWilders } = useContext(WildersContext);
 
   const deleteWilder = async () => {
     const requestOptions = {

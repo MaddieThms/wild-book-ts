@@ -34,8 +34,6 @@ const Home = () => {
               email={wilder.email}
               skills={wilder.skills}
               setWilders={setWilders}
-              wilders={wilders}
-              getWilders={getWilders}
             />
           ))}
         </section>
