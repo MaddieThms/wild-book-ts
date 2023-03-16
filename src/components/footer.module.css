@@ -1,0 +1,10 @@
+.footer {
+  border-top: 2px solid #f76c6c;
+}
+
+.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px;
+}
